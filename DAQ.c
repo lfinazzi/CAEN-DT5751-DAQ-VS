@@ -38,9 +38,9 @@ int main(int argc, char* argv[])
     if(ret) printf("Some error"); */
     CAEN_DGTZ_ErrorCode ret = 0;
 
-    char savepath_CH0[200] = "C:\\Users\\Us\\Desktop\\lucas\\CAEN_DAQ\\data\\CH0_RUN_";
-    char savepath_CH1[200] = "C:\\Users\\Us\\Desktop\\lucas\\CAEN_DAQ\\data\\CH1_RUN_";
-    char savepath_CH2[200] = "C:\\Users\\Us\\Desktop\\lucas\\CAEN_DAQ\\data\\CH2_RUN_";
+    char savepath_CH0[200] = "./data/CH0_RUN_";
+    char savepath_CH1[200] = "./data/CH1_RUN_";
+    char savepath_CH2[200] = "./data/CH2_RUN_";
     char ConfigFileName[200];
 
     // Buffers to store the data. The memory must be allocated using the appropriate
