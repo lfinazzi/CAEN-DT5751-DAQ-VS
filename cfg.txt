@@ -1,0 +1,98 @@
+# Lines starting with # are comments.
+# All settings and options are case insensitive.
+
+# coincidence mode - 0 for CH0 && CH1, 1 for (CH0 && CH1) || (CH0 && CH2), 2 for (CH0 && CH1 && CH2), 3 (CH0 || CH1)
+COINCIDENCEMODE 0
+
+# acquisition mode - 0 for oscilloscope, 1 for list, 2 for mixed
+ACQUISITIONMODE 2
+
+# record length (samples)
+RECORDLENGTH 240
+
+# percentage of samples previous to trigger
+PRETRIGGERSIZE 128
+
+# trigger validation window in coincidence mode in samples
+COINCIDENCEWINDOW 48
+
+# trigger holdoff (samples)
+TRIGGERHOLDOFF 96
+
+# pileup rejection - 0 for disabled, 1 for enabled
+PILEUPREJECTION 0
+
+# all settings in common can be moved to any channel [n] if desired
+[Common]
+
+# DC offset, ranges from 0 (0x0000) to 65535 (0xFFFF) - for signals in the range (0, Vpp), use 0xFFFF
+DCOFFSET 55000
+
+# trigger polarity - 0 for positive, 1 for negative
+TRIGGERPOLARITY 0
+
+# QDC sensibility - 2^(CSENSIBILITY)*20 fC/LSB 
+CSENSIBILITY 1
+
+# short gate (samples)
+SHORTGATE 25
+
+# long gate (samples)
+LONGGATE 100
+
+# gate offset (samples)
+PGATE 80
+
+# baseline samples - 0 for FIXED, and 2^(BASELINESAMPLES + 2) for other values
+BASELINESAMPLES 4
+
+# discriminator type - 0 for Lead Edge Discriminator, 1 for Constant Fraction Discriminator
+DISCRIMINATORTYPE 1
+
+# CFD fraction - 0.25 + 0.25*CFDFRACTION
+CFDFRACTION 2
+
+# CFD delay (sampling units) - 1 ns with DES disabled, 0.5 ns with DES enabled
+CFDDELAY 32
+
+# pile-up rejection - 0 for detect only, 1 for pile-up veto
+PILEUPREJECTION 0
+
+# Configuration for individual channels [n]
+
+[0]
+
+# channel enable, 1 for enable
+CHANNELENABLE 1
+SELFTRIGGER 1
+
+# trigger threshold  (LSB or 1/1024 V)
+TRIGGERTHRESHOLD 30
+
+
+[1]
+
+# channel enable, 1 for enable
+CHANNELENABLE 1
+SELFTRIGGER 1
+
+# trigger threshold  (LSB or 1/1024 V)
+TRIGGERTHRESHOLD 30
+
+[2]
+
+# channel enable, 1 for enable
+CHANNELENABLE 0
+SELFTRIGGER 0
+
+# trigger threshold  (LSB or 1/1024 V)
+TRIGGERTHRESHOLD 30
+
+[3]
+
+# channel enable, 1 for enable
+CHANNELENABLE 0
+SELFTRIGGER 0
+
+# trigger threshold  (LSB or 1/1024 V)
+TRIGGERTHRESHOLD 30
