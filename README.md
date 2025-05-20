@@ -17,7 +17,7 @@ Depending on the user platform (and the system USB port config), the function CA
 IMPORTANT:
 
   1. For the code to run, you need to create a folder "data" in the source file directory.
-  2. For inndividual channel measurements (CH0 || CH1), both CH 0 and CH 1 need to be activated.
+  2. For individual channel measurements (CH0 || CH1), both CH 0 and CH 1 need to be activated.
 
 EVENT FORMAT:
 
@@ -28,7 +28,7 @@ Each acquisition saves one file per channel used. The data format for each event
   3. fine timetag - 2B
   4. charge short - 2B
   5. charge long - 2B
-  6. baseline 2B
+  6. baseline - 2B
   7. pileup rejection flag - 2B
   8. All waveform samples (if any) - 2B per sample
 
