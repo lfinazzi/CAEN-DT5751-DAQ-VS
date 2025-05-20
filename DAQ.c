@@ -321,9 +321,8 @@ int main(int argc, char* argv[])
 
                     // Binary write to file
 
-                    /*  SAVED FOR EACH EVENT (outdated, now it doesn't save waveforms nor record lengths)
+                    /*  SAVED FOR EACH EVENT
                      *
-                     *  record length - 1 byte
                      *  Extended timetag - 2 bytes
                      *  timetag - 4 bytes
                      *  Fine timetag - 2 bytes
@@ -331,10 +330,8 @@ int main(int argc, char* argv[])
                      *  charge long - 2 bytes
                      *  baseline - 2 bytes
                      *  pileup rejection flag - 2 bytes
-                     *  all waveform samples - 2 bytes per sample
+                     *  all waveform samples (if any) - 2 bytes per sample
                      *
-                     *  SAVED ONCE AT END
-                     *  number of events - 4 bytes          // doesn't save event counter at end either
                      *
                      */
 
@@ -348,13 +345,13 @@ int main(int argc, char* argv[])
                         fwrite(&Events[ch][ev].Baseline, sizeof(uint16_t), 1, F_CH0);
                         fwrite(&Events[ch][ev].Pur, sizeof(uint16_t), 1, F_CH0);
                         
-                        /*
-                        if (Params[b].AcqMode != CAEN_DGTZ_DPP_ACQ_MODE_List) {
+                        
+                        if (Params[b].AcqMode != CAEN_DGTZ_DPP_ACQ_MODE_List) {	// if in mixed mode
                             for (int i = 0; i < size; i++) {
                                 fwrite(&WaveLine[i], sizeof(int16_t), 1, F_CH0);
                             }
                         }
-                        */
+                        
                     }
 
                     if (ch == 1) {
@@ -367,13 +364,13 @@ int main(int argc, char* argv[])
                         fwrite(&Events[ch][ev].Baseline, sizeof(uint16_t), 1, F_CH1);
                         fwrite(&Events[ch][ev].Pur, sizeof(uint16_t), 1, F_CH1);
 
-                        /*
-                        if (Params[b].AcqMode != CAEN_DGTZ_DPP_ACQ_MODE_List) {
+                        
+                        if (Params[b].AcqMode != CAEN_DGTZ_DPP_ACQ_MODE_List) {	// if in mixed mode
                             for (int i = 0; i < size; i++) {
                                 fwrite(&WaveLine[i], sizeof(int16_t), 1, F_CH1);
                             }
                         }
-                        */
+                        
                     }
 
                     if (ch == 2) {
@@ -385,13 +382,13 @@ int main(int argc, char* argv[])
                         fwrite(&Events[ch][ev].ChargeLong, sizeof(uint16_t), 1, F_CH2);
                         fwrite(&Events[ch][ev].Baseline, sizeof(uint16_t), 1, F_CH2);
                         fwrite(&Events[ch][ev].Pur, sizeof(uint16_t), 1, F_CH2);
-                        /*
-                        if (Params[b].AcqMode != CAEN_DGTZ_DPP_ACQ_MODE_List) {
+                        
+                        if (Params[b].AcqMode != CAEN_DGTZ_DPP_ACQ_MODE_List) {	// if in mixed mode
                             for (int i = 0; i < size; i++) {
                                 fwrite(&WaveLine[i], sizeof(int16_t), 1, F_CH2);
                             }
                         }
-                        */
+                        
                     }
 
 
